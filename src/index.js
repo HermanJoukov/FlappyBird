@@ -130,16 +130,16 @@ const sketch = p5 => {
     }
 
     p5.keyPressed = (e) => {
-        if (e.key === ' ') {
+        if (e.key === 'c') {
             if (gameOver === false)
                 bird.jump();
-            if (gameStart === false)
-                gameStart = true;
         }
-        if (e.key === 'r') {
+        if (e.key === 'a') {
             if (gameOver) {
                 resetGame();
             }
+            if (gameStart === false)
+                gameStart = true;
         }
     }
 }
