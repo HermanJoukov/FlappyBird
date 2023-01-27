@@ -128,7 +128,24 @@ const sketch = p5 => {
 
         }
     }
-
+    
+     window.onmessage = (event) => {
+    if (event.data) {
+        let receivedData = event.data;
+        if (receivedData == "65") {
+            if (gameOver) {
+                resetGame();
+            }
+            if (gameStart === false)
+                gameStart = true;
+            }
+        if (receivedData == "67") {
+            if (gameOver === false)
+                bird.jump();
+            }
+    }
+  }
+    
     p5.keyPressed = (e) => {
         if (e.keyCode  == 67) {
             if (gameOver === false)
